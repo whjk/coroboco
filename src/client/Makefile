@@ -12,9 +12,9 @@
 # to include code supplied by maevarm, add a .o target
 # tag to the parents line (e.g. "PARENTS = "m_bus.o")
 # --------------------------------------------------------
-MAIN       = main.o m_usb.o maevarm-rf.o
+MAIN       = main.o
 CHILDREN   = 
-PARENTS    = 
+PARENTS    = m_usb.o maevarm-rf.o
 
 # --------------------------------------------------------
 # if you want to use one of our pre-compiled libraries,
@@ -26,7 +26,7 @@ PARENTS    =
 # unless you really know what you're doing
 # --------------------------------------------------------
 DEVICE     = atmega32u4
-CLOCK      = 16000000
+CLOCK      = 8000000
 
 COMPILE = avr-gcc -Wall -Os -DF_CPU=$(CLOCK) -mmcu=$(DEVICE)
 
